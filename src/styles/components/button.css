@@ -1,0 +1,20 @@
+.container-button{
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 130px;
+    color: aliceblue;
+    /* margin: 0 auto; */
+}
+
+.colorFondoNaranja {
+    background-color: var(--naranja);
+}
+
+.colorHoverNaranja:hover {
+    background-color: var(--naranja-claro);
+}
+
+.colorHoverNegro:hover {
+    background-color: var(--negro);
+}

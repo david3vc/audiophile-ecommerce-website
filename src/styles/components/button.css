@@ -4,11 +4,18 @@
     text-align: center;
     width: 130px;
     color: aliceblue;
-    /* margin: 0 auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
 }
 
 .colorFondoNaranja {
     background-color: var(--naranja);
+}
+
+.colorFondoGris {
+    background-color: var(--gris);
 }
 
 .colorHoverNaranja:hover {
@@ -17,4 +24,8 @@
 
 .colorHoverNegro:hover {
     background-color: var(--negro);
+}
+
+.colorGris {
+    color: gray;
 }

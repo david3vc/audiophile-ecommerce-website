@@ -11,7 +11,7 @@ const Hero = () => {
                 Experience natural, lifelike audio and exceptional build quality
                 made for the passionate music enthusiast.
             </div>
-            <Button nombre="SEE PRODUCT" colorFondo="colorFondoNaranja" colorHover="colorHoverNaranja" />
+            <Button color="" nombre="SEE PRODUCT" colorFondo="colorFondoNaranja" colorHover="colorHoverNaranja" />
         </div>
     );
 };

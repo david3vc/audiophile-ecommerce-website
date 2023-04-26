@@ -1,0 +1,18 @@
+.container-card-product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gris);
+    border-radius: 10px;
+    margin: 10px 0px;
+    width: 90%;
+}
+
+.container-card-product__photo{
+    width: 100%;
+}
+
+.container-card-product__photo img{
+    width: 100%;
+    border-radius: 10px;
+}

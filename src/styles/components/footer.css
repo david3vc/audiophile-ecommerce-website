@@ -1,0 +1,31 @@
+.container-footer{
+    background-color: var(--negro-claro);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 0px;
+    row-gap: 45px;
+}
+
+.container-footer__title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-footer__menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.container-footer__content{
+    width: 80%;
+    text-align: center;
+}
+
+.container-footer__icons{
+    display: flex;
+    column-gap: 10px;
+}

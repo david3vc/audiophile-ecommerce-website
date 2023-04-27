@@ -1,0 +1,28 @@
+.container-downstairs{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-downstairs__photo{
+    width: 100%;
+}
+
+.container-downstairs__photo img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.container-downstairs__subtitle{
+    font-size: 23px;
+}
+
+.container-downstairs__content{
+    color: gray;
+}
+
+.container-downstairs__subtitle, .container-downstairs__content{
+    text-align: center;
+}

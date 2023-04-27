@@ -1,4 +1,4 @@
-@import "home.css";
-@import "card-speaker";
-@import "card-product2.css";
-@import "container-cards-product2.css"
+@import "home/home.css";
+@import "home/card-speaker";
+@import "home/card-product2.css";
+@import "home/container-cards-product2.css"

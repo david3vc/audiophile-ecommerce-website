@@ -1,0 +1,8 @@
+.container-view-name{
+    color: var(--blanco);
+    background-color: var(--negro);
+    text-align: center;
+    padding: 25px 0px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}

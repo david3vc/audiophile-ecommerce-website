@@ -1,5 +1,9 @@
-const ViewName = () => {
-    return <div className="container-view-name">HEADPHONES</div>;
+interface IViewName {
+    name: string;
+}
+
+const ViewName = ({ name }: IViewName) => {
+    return <div className="container-view-name">{name}</div>;
 };
 
 export default ViewName;

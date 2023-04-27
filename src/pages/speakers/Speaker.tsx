@@ -4,13 +4,13 @@ import Downstairs from "../../components/Downstairs";
 import ViewName from "../../components/ViewName";
 import data from "../../data/data.json";
 
-const HeadPhone = () => {
+const Speaker = () => {
     return (
-        <div className="container-headphone">
-            <ViewName name="HEADPHONES" />
+        <div className="container-speaker">
+            <ViewName name="SPEAKERS" />
             {data.map(
                 (item) =>
-                    item.category === "headphones" && (
+                    item.category === "speakers" && (
                         <>
                             <CardProductDetail
                                 title={item.name}
@@ -31,4 +31,4 @@ const HeadPhone = () => {
     );
 };
 
-export default HeadPhone;
+export default Speaker;

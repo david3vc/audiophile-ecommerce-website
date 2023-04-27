@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/home/Home";
 import HeadPhone from "./pages/headphones/HeadPhone";
+import Speaker from "./pages/speakers/Speaker";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/headphone" element={<HeadPhone />} />
+                <Route path="/speaker" element={<Speaker />} />
             </Routes>
             <Footer />
         </BrowserRouter>

@@ -5,12 +5,13 @@ interface IButton {
     colorHover: string;
     nombre: string;
     color: string;
-    children?: ReactNode
+    border?: string;
+    children?: ReactNode;
 }
 
-const Button = ({ colorFondo, colorHover, nombre, color, children }: IButton) => {
+const Button = ({ colorFondo, colorHover, nombre, color, children, border }: IButton) => {
     return (
-        <div className={`container-button ${colorFondo} ${colorHover} ${color}`}>
+        <div className={`container-button ${colorFondo} ${colorHover} ${color} ${border}`}>
             {nombre}
             {children}
         </div>

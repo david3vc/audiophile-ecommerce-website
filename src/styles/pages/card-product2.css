@@ -1,0 +1,17 @@
+.container-card-product2{
+    border-radius: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 30px;
+    width: 90%;
+    /* margin: 0 auto; */
+    background-color: var(--gris);
+}
+
+.container-card-product2__name, .container-button{
+    margin-left: 30px;
+}

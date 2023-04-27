@@ -38,3 +38,11 @@
 .colorGris {
     color: gray;
 }
+
+.colorNegro {
+    color: var(--negro);
+}
+
+.borderNegro {
+    border: solid 1px black;
+}

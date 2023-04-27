@@ -14,6 +14,10 @@
     background-color: var(--naranja);
 }
 
+.colorFondoNegro {
+    background-color: var(--negro);
+}
+
 .colorFondoGris {
     background-color: var(--gris);
 }
@@ -24,6 +28,11 @@
 
 .colorHoverNegro:hover {
     background-color: var(--negro);
+}
+
+.colorHoverBlanco:hover {
+    background-color: var(--blanco);
+    color: var(--negro);
 }
 
 .colorGris {

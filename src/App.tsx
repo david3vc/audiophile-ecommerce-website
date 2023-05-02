@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import HeadPhone from "./pages/headphones/HeadPhone";
 import Speaker from "./pages/speakers/Speaker";
 import Earphone from "./pages/earphones/Earphone";
+import HeadPhoneDetail from "./pages/headphones/HeadPhoneDetail";
 
 function App() {
     return (
@@ -12,9 +13,10 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/headphone" element={<HeadPhone />} />
-                <Route path="/speaker" element={<Speaker />} />
-                <Route path="/earphone" element={<Earphone />} />
+                <Route path="/headphones" element={<HeadPhone />} />
+                <Route path="/headphones/:id" element={<HeadPhoneDetail />} />
+                <Route path="/speakers" element={<Speaker />} />
+                <Route path="/earphones" element={<Earphone />} />
             </Routes>
             <Footer />
         </BrowserRouter>

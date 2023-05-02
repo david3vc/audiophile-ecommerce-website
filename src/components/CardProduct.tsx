@@ -12,7 +12,7 @@ const CardProduct = ({ name, url_img }: ICardProduct) => {
                 <img src={url_img} alt="" />
             </div>
             <div className="container-card-product__name">{name}</div>
-            <Button color="colorGris" nombre="SHOP" colorFondo="" colorHover="">
+            <Button color="colorGris" nombre="SHOP" colorFondo="" colorHover="" to="">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

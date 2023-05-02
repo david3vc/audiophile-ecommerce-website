@@ -17,6 +17,7 @@ const HeadPhone = () => {
                                 subtitle="NEW PRODUCT"
                                 overview={item.description}
                                 img={item.image.mobile}
+                                to={`/${item.category}/${item.id}`}
                             />
                             <br />
                             <br />

@@ -1,0 +1,44 @@
+.container-modal{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    row-gap: 25px;
+}
+
+.container-modal__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-modal__list__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item__photo{
+    width: 20%;
+}
+
+.item__photo img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item__amount{
+    background-color: var(--gris);
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    padding: 5px 10px;
+}
+
+.container-modal__total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-modal__button{
+    display: flex;
+    justify-content: center;
+}

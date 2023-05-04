@@ -17,6 +17,8 @@ const Earphone = () => {
                                 subtitle="NEW PRODUCT"
                                 overview={item.description}
                                 img={item.image.mobile}
+                                to={`/${item.category}/${item.id}`}
+                                key={item.id}
                             />
                             <br />
                             <br />

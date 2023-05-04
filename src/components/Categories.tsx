@@ -6,9 +6,9 @@ import earphones from '../assets/product-yx1-earphones/mobile/image-category-pag
 const Categories = () => {
     return (
         <div className="container-categories">
-            <CardProduct name="HEADPHONES" url_img={headphones} />
-            <CardProduct name="SPEAKERS" url_img={speakers} />
-            <CardProduct name="EARPHONES" url_img={earphones} />
+            <CardProduct name="HEADPHONES" url_img={headphones} to="/headphones" />
+            <CardProduct name="SPEAKERS" url_img={speakers} to="/speakers" />
+            <CardProduct name="EARPHONES" url_img={earphones} to="/earphones" />
         </div>
     );
 };

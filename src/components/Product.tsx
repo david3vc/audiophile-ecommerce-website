@@ -1,31 +1,45 @@
 import { useState } from "react";
 import Button from "./Button";
-import { BoxModel, GalleryModel } from "../types";
+import { DataModel } from "../types";
+import { useProductsList } from "../context/ProductsListContext";
 
 interface IProduct {
-    id: string;
-    img: string;
     subtitle: string;
-    title: string;
-    overview: string;
-    price: number;
-    features: string;
-    box: BoxModel[];
-    galeria: GalleryModel;
+    product?: DataModel;
 }
 
-const Product = ({
-    id,
-    img,
-    subtitle,
-    title,
-    overview,
-    price,
-    features,
-    box,
-    galeria,
-}: IProduct) => {
+const Product = ({ subtitle, product }: IProduct) => {
     const [counter, setCounter] = useState(1);
+    const { list, setList, setTotal } = useProductsList();
+
+    const agregarACarrito = () => {
+        // const newList: (DataModel | undefined)[] = list ?? [];
+        // for (let i = 0; i < counter; i++) {
+        //     newList.push(product);
+        // }
+        // setList?.(newList ?? []);
+
+        // const subTotal = counter * (product?.price ?? 0);
+        // setTotal?.(subTotal);
+        const newList = list?.map((item) => {
+            if (item?.id === product?.id) {
+                return {
+                    ...item,
+                    count: (item?.count ?? 0) + counter,
+                    subTotal: ((item?.count ?? 0) + counter) * (item?.price ?? 0)
+                };
+            } else {
+                return item;
+            }
+        });
+        setList?.(newList as (DataModel | undefined)[]);
+        
+        let newTotal = 0;
+        for (let i = 0; i < (newList?.length ?? 0); i++) {
+            newTotal += (newList?.[i]?.subTotal ?? 0);
+        }
+        setTotal?.(newTotal);
+    };
 
     return (
         <div className="container-product">
@@ -34,15 +48,17 @@ const Product = ({
                 color="colorGris"
                 colorFondo=""
                 colorHover=""
-                to="/headphones"
+                to={`/${product?.category}`}
             />
             <div className="container-product__img">
-                <img src={`/src${img}`} alt="" />
+                <img src={`/src${product?.image.mobile}`} alt="" />
             </div>
             <div className="container-product__subtitle">{subtitle}</div>
-            <div className="container-product__title">{title}</div>
-            <div className="container-product__overview">{overview}</div>
-            <div className="container-product__price">$ {price}</div>
+            <div className="container-product__title">{product?.name}</div>
+            <div className="container-product__overview">
+                {product?.description}
+            </div>
+            <div className="container-product__price">$ {product?.price}</div>
             <div className="container-product__add-cart">
                 <div className="container-product__add-cart__counter">
                     <span onClick={() => setCounter((counter) => counter - 1)}>
@@ -79,27 +95,32 @@ const Product = ({
                     colorFondo="colorFondoNaranja"
                     colorHover="colorHoverNaranja"
                     to=""
+                    onClick={agregarACarrito}
                 />
             </div>
             <div className="container-product__features">
                 <h2>FEATURES</h2>
                 <span className="container-product__features__description">
-                    {features}
+                    {product?.features}
                 </span>
             </div>
             <div className="container-product__box">
                 <h2>IN THE BOX</h2>
-                {box.map((box, i) => (
+                {product?.includes.map((box, i) => (
                     <div key={i}>
-                        <span className="container-product__box__quantity">{box.quantity}x</span>{' '}
-                        <span className="container-product__box__item">{box.item}</span>
+                        <span className="container-product__box__quantity">
+                            {box.quantity}x
+                        </span>{" "}
+                        <span className="container-product__box__item">
+                            {box.item}
+                        </span>
                     </div>
                 ))}
             </div>
             <div className="container-product__gallery">
-                <img src={`/src${galeria.first.mobile}`} alt="" />
-                <img src={`/src${galeria.second.mobile}`} alt="" />
-                <img src={`/src${galeria.third.mobile}`} alt="" />
+                <img src={`/src${product?.gallery.first.mobile}`} alt="" />
+                <img src={`/src${product?.gallery.second.mobile}`} alt="" />
+                <img src={`/src${product?.gallery.third.mobile}`} alt="" />
             </div>
         </div>
     );

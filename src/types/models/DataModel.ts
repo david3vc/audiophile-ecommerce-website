@@ -17,4 +17,6 @@ export default interface DataModel {
     includes: BoxModel[];
     gallery: GalleryModel;
     others: OthersModel[];
+    count?: number;
+    subTotal?: number;
 }

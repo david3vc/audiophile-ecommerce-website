@@ -9,6 +9,7 @@ interface IButton {
     to: string;
     border?: string;
     children?: ReactNode;
+    onClick?: () => void
 }
 
 const Button = ({
@@ -19,11 +20,13 @@ const Button = ({
     children,
     border,
     to,
+    onClick
 }: IButton) => {
     return (
         <NavLink
             to={to}
             className={`container-button ${colorFondo} ${colorHover} ${color} ${border}`}
+            onClick={onClick}
         >
             {nombre}
             {children}

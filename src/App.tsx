@@ -6,20 +6,27 @@ import HeadPhone from "./pages/headphones/HeadPhone";
 import Speaker from "./pages/speakers/Speaker";
 import Earphone from "./pages/earphones/Earphone";
 import HeadPhoneDetail from "./pages/headphones/HeadPhoneDetail";
+import { ProductsListContextProvider } from "./context/ProductsListContext";
+import EarphoneDetail from "./pages/earphones/EarphoneDetail";
+import SpeakerDetail from "./pages/speakers/SpeakerDetail";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/headphones" element={<HeadPhone />} />
-                <Route path="/headphones/:id" element={<HeadPhoneDetail />} />
-                <Route path="/speakers" element={<Speaker />} />
-                <Route path="/earphones" element={<Earphone />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+        <ProductsListContextProvider>
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/headphones" element={<HeadPhone />} />
+                    <Route path="/headphones/:id" element={<HeadPhoneDetail />} />
+                    <Route path="/speakers" element={<Speaker />} />
+                    <Route path="/speakers/:id" element={<SpeakerDetail />} />
+                    <Route path="/earphones" element={<Earphone />} />
+                    <Route path="/earphones/:id" element={<EarphoneDetail />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </ProductsListContextProvider>
     );
 }
 

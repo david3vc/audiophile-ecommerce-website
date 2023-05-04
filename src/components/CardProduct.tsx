@@ -3,16 +3,17 @@ import Button from "./Button";
 interface ICardProduct {
     name: string;
     url_img: string;
+    to: string;
 }
 
-const CardProduct = ({ name, url_img }: ICardProduct) => {
+const CardProduct = ({ name, url_img, to }: ICardProduct) => {
     return (
         <div className="container-card-product">
             <div className="container-card-product__photo">
                 <img src={url_img} alt="" />
             </div>
             <div className="container-card-product__name">{name}</div>
-            <Button color="colorGris" nombre="SHOP" colorFondo="" colorHover="" to="">
+            <Button color="colorGris" nombre="SHOP" colorFondo="" colorHover="" to={to}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

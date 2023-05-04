@@ -11,4 +11,6 @@
 .header-container__logo__term{
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
+    color: white;
 }

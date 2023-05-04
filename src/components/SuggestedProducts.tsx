@@ -8,8 +8,8 @@ interface ISuggestedProducts {
 const SuggestedProducts = ({ others }: ISuggestedProducts) => {
     return (
         <div className="container-suggested-products">
-            {others.map((other) => (
-                <SuggestedProduct other={other} />
+            {others.map((other, i) => (
+                <SuggestedProduct other={other} key={i} />
             ))}
         </div>
     );

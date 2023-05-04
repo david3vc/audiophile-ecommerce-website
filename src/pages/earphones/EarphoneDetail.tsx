@@ -5,7 +5,7 @@ import Categories from "../../components/Categories";
 import Downstairs from "../../components/Downstairs";
 import SuggestedProducts from "../../components/SuggestedProducts";
 
-const HeadPhoneDetail = () => {
+const EarphoneDetail = () => {
     const { id } = useParams();
     const product = data.find(item => item.id === Number(id));
     return (
@@ -21,4 +21,4 @@ const HeadPhoneDetail = () => {
     );
 };
 
-export default HeadPhoneDetail;
+export default EarphoneDetail;

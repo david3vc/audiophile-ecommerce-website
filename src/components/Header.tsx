@@ -146,7 +146,7 @@ const Header = () => {
                                                         {item?.slug}
                                                     </div>
                                                     <div className="item__overview__price">
-                                                        {item?.price}
+                                                        $ {item?.price}
                                                     </div>
                                                 </div>
                                                 <div className="item__amount">
@@ -209,7 +209,8 @@ const Header = () => {
                                 colorFondo="colorFondoNaranja"
                                 colorHover="coloHoverNaranja"
                                 nombre="CHECKOUT"
-                                to=""
+                                to="/checkout"
+                                onClick={() => setShowModal(false)}
                             />
                         </div>
                     </div>

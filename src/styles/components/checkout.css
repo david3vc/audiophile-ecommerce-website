@@ -1,0 +1,122 @@
+.container-checkout{
+    background-color: var(--gris);
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.container-checkout__sub-container{
+    /* background-color: white; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sub-container__checkout,
+.sub-container__summary{
+    background-color: white;
+}
+
+.sub-container__summary{
+    margin: 20px 0px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.sub-container__checkout{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.sub-container__checkout__billing-details, 
+.sub-container__checkout__shipping-info,
+.sub-container__checkout__payment-details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.checkout__billing-details__title, 
+.checkout__shipping-info__title,
+.checkout__payment-details__title{
+    color: var(--naranja);
+}
+
+.checkout__billing-details__form, 
+.checkout__shipping-info__form,
+.checkout__payment-details__form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.billing-details__form__input, 
+.shipping-info__form__input,
+.payment-details__form__input{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.inputText{
+    padding: 15px;
+    border-radius: 8px;
+    border-color: rgb(172, 172, 172);
+    border-style: solid;
+    border-width: 1px;
+}
+
+.inputText:focus{
+    outline: none;
+}
+
+.sub-container__summary__cart-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.sub-container__summary__cart-list__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-list__item__photo{
+    width: 20%;
+}
+
+.cart-list__item__photo img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cart-list__item__amount, 
+.cart-list__item__overview__price{
+    color: gray;
+}
+
+.sub-container__summary__detail{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.sub-container__summary__detail__total,
+.sub-container__summary__detail__shipping,
+.sub-container__summary__detail__vat,
+.sub-container__summary__detail__grand-total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-container__summary__detail__grand-total{
+    margin-top: 15px;
+}
+
+.sub-container__summary__button{
+    display: flex;
+    justify-content: center;
+}

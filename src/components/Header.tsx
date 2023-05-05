@@ -129,6 +129,7 @@ const Header = () => {
                         <div className="container-modal__list">
                             {(list?.length ?? 0) > 0 &&
                                 list?.map((item) => {
+                                    const nombre = item?.name.split(" ");
                                     return (
                                         (item?.count ?? 0) > 0 && (
                                             <div
@@ -143,7 +144,9 @@ const Header = () => {
                                                 </div>
                                                 <div className="item__overview">
                                                     <div className="item__overview__description">
-                                                        {item?.slug}
+                                                        {nombre?.[0] === "XX99"
+                                                            ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
+                                                            : nombre?.[0]}
                                                     </div>
                                                     <div className="item__overview__price">
                                                         $ {item?.price}

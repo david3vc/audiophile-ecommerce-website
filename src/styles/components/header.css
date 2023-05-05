@@ -1,16 +1,37 @@
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20px 15px;
     background-color: var(--negro-claro);
     color: var(--blanco);
     align-items: center;
     border-bottom: solid 1px rgb(70, 70, 70);
 }
 
-.header-container__logo__term{
+.header-container__logo__term {
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
     color: white;
 }
+
+.badge-mark {
+    position: absolute;
+    z-index: 5;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 15px;
+    top: 18px;
+    border-radius: 20%;
+    background-color: tomato;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* .cart {
+    position: relative;
+    bottom: -10px;
+} */

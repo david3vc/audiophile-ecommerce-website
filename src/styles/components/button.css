@@ -47,3 +47,10 @@
 .borderNegro {
     border: solid 1px black;
 }
+
+
+@media screen and (min-width: 576px) {
+    .container-button{
+        width: 120px;
+    }
+}

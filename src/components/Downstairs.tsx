@@ -1,10 +1,16 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
 import gear from '../assets/shared/mobile/image-best-gear.jpg';
+import gearTablet from '../assets/shared/tablet/image-best-gear.jpg';
 
 const Downstairs = () => {
+    const matches = useMediaQuery('(min-width:576px)');
+    
     return (
         <div className="container-downstairs">
             <div className="container-downstairs__photo">
-                <img src={gear} alt="" />
+                {
+                    matches ? <img src={gearTablet} alt="" /> : <img src={gear} alt="" />
+                }
             </div>
             <div className="container-downstairs__subtitle">
                 BRINGING YOU THE <span style={{color: '#d87d4a'}}>BEST</span>  AUDIO GEAR

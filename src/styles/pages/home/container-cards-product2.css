@@ -5,3 +5,18 @@
     row-gap: 20px;
     margin: 25px 0px;
 }
+
+.container-cards-product2__earphones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+@media screen and (min-width: 576px) {
+    .container-cards-product2__earphones{
+        flex-direction: row;
+        width: 90%;
+        column-gap: 20px;
+    }
+}

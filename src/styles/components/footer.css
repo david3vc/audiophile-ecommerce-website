@@ -30,3 +30,37 @@
     display: flex;
     column-gap: 10px;
 }
+
+.container-footer__copyright-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+}
+
+@media screen and (min-width: 576px) {
+    .container-footer{
+        align-items: flex-start;
+        padding: 55px 45px;
+    }
+
+    .container-footer__menu{
+        flex-direction: row;
+        column-gap: 25px;
+    }
+
+    .container-footer__content{
+        text-align: start;
+        width: 95%;
+    }
+
+    .container-footer__copyright-icons{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container-footer__icons{
+        column-gap: 15px;
+    }
+}

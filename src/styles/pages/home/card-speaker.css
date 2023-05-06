@@ -35,3 +35,13 @@
 .container-card-speaker__overview{
     text-align: center;
 }
+
+@media screen and (min-width: 576px) {
+    .container-card-speaker{
+        margin-top: 50px;
+    }
+
+    .container-card-speaker__overview{
+        width: 60%;
+    }
+}

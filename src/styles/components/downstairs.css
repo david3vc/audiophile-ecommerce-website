@@ -26,3 +26,10 @@
 .container-downstairs__subtitle, .container-downstairs__content{
     text-align: center;
 }
+
+@media screen and (min-width: 576px) {
+    .container-downstairs{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

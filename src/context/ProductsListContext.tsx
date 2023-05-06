@@ -27,10 +27,6 @@ const ProductsListContextProvider = ({ children }: ContextProps) => {
         setList(data);
     }, []);
 
-    // useEffect(() => {
-    //     list.map(item => setTotal(t => t += (item?.subTotal ?? 0)));
-    // }, [list]);
-
     const value = useMemo(() => {
         return {
             list,

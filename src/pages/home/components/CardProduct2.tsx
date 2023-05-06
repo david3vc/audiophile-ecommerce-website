@@ -18,6 +18,7 @@ const CardProduct2 = ({ imagen, isButton, height, name }: ICardProduct2) => {
                     colorHover=""
                     nombre="SEE PRODUCT"
                     border="borderNegro"
+                    to="#"
                 />
             )}
         </div>

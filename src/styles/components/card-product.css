@@ -16,3 +16,13 @@
     width: 100%;
     border-radius: 10px;
 }
+
+@media screen and (min-width: 576px) {
+    .container-card-product{
+        width: 30%;
+        margin: 0 auto;
+    }
+    .container-card-product__photo{
+        width: 100%;
+    }
+}

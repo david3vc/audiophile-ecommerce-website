@@ -5,7 +5,6 @@ interface props {
     children: ReactNode;
     showModal: boolean;
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-    titulo: string;
     mostrarHeader: boolean;
     imagen: string;
     padding: string;
@@ -15,14 +14,12 @@ interface props {
 interface IContenedor {
     imagen: string;
     padding: string;
-    titulo: string;
 }
 
 const modal = ({
     children,
     showModal,
     setShowModal,
-    titulo,
     anio,
     mostrarHeader,
     imagen,
@@ -32,10 +29,10 @@ const modal = ({
         <>
             {showModal && (
                 <Overlay>
-                    <ContenedorModal imagen={imagen} padding={padding} titulo={titulo}>
+                    <ContenedorModal imagen={imagen} padding={padding} >
                         {mostrarHeader && (
                             <EncabezadoModal>
-                                <h3>{titulo} <span style={{color: 'rgb(190, 190, 190)'}}>{anio}</span></h3>
+                                <h3> <span style={{color: 'rgb(190, 190, 190)'}}>{anio}</span></h3>
                             </EncabezadoModal>
                         )}
 
@@ -89,10 +86,10 @@ const ContenedorModal = styled.div<IContenedor>`
 
     font-size: 14px;
 
-    @media screen and (min-width: 992px) {
-        width: ${props => props.titulo === 'Trailer' ? '65%': '40%'};
-        padding: ${props => props.titulo !== 'Trailer' ? '30px': '0px'};
-        height: ${props => props.titulo === 'Trailer' ? '500px': 'auto'};
+    @media screen and (min-width: 576px) {
+        width: 50%;
+        position: absolute;
+        right: 30px;
     }
 `;
 

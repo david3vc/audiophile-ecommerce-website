@@ -7,3 +7,7 @@
     --blanco: #ffffff;
     --negro: #000000;
 }
+
+body {
+    font-family: 'Manrope', sans-serif;
+}

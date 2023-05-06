@@ -20,6 +20,7 @@ const CardSpeaker = () => {
                 colorFondo="colorFondoNegro"
                 nombre="SEE PRODUCT"
                 colorHover="colorHoverBlanco"
+                to="/speakers/5"
             />
         </div>
     );

@@ -16,3 +16,19 @@
 .container-hero__producto-overview{
     text-align: center;
 }
+
+@media screen and (min-width: 576px) {
+    .container-hero {
+        background-image: url("../../../assets/home/tablet/image-header.jpg");
+        margin-bottom: 50px;
+    }
+    .container-hero__producto-overview{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container-hero {
+        background-image: url("../../../assets/home/desktop/image-hero.jpg");
+    }
+}

@@ -11,18 +11,20 @@ const ContainerCardsProduct2 = () => {
                 height="275px"
                 name="ZX7 SPEAKER"
             />
-            <CardProduct2
-                isButton={false}
-                imagen={earphonesyx1}
-                height="175px"
-                name=""
-            />
-            <CardProduct2
-                isButton={true}
-                imagen=""
-                height="175px"
-                name="YX1 EARPHONES"
-            />
+            <div className="container-cards-product2__earphones">
+                <CardProduct2
+                    isButton={false}
+                    imagen={earphonesyx1}
+                    height="175px"
+                    name=""
+                />
+                <CardProduct2
+                    isButton={true}
+                    imagen=""
+                    height="175px"
+                    name="YX1 EARPHONES"
+                />
+            </div>
         </div>
     );
 };

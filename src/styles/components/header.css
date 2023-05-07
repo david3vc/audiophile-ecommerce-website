@@ -30,3 +30,56 @@
     font-size: 15px;
     color: #fff;
 }
+
+.header-container__menu-options{
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    .header-container{
+        padding: 30px 150px;
+        border-bottom: var(--negro-claro);
+    }
+
+    .badge-mark {
+        position: absolute;
+        right: 150px;
+        top: 28px;
+    }
+
+    .header-container__menu{
+        display: none;
+    }
+
+    .header-container__menu-options{
+        display: block;
+    }
+
+    .header-container__menu-options{
+        display: flex;
+        column-gap: 30px;
+    }
+
+    .header-container__menu-options a {
+        text-decoration: none;
+    color: white;
+    }
+
+    .border-header{
+        background-color: var(--negro-claro);
+    }
+
+    .border-header-child{
+        border-bottom: solid 1px rgb(70, 70, 70);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .header-container__carrito{
+        cursor: pointer;
+    }
+
+    .container-modal__header__remove{
+        cursor: pointer;
+    }
+}

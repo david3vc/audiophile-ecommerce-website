@@ -9,7 +9,7 @@ const HeadPhone = () => {
         <div className="container-headphone">
             <ViewName name="HEADPHONES" />
             {data.map(
-                (item) =>
+                (item, i) =>
                     item.category === "headphones" && (
                         <>
                             <CardProductDetail
@@ -19,6 +19,7 @@ const HeadPhone = () => {
                                 img={item.image.mobile}
                                 to={`/${item.category}/${item.id}`}
                                 key={item.id}
+                                reverse={i %2 === 0 ? true : false}
                             />
                             <br />
                             <br />

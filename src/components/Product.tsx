@@ -18,7 +18,8 @@ const Product = ({ subtitle, product }: IProduct) => {
                 return {
                     ...item,
                     count: (item?.count ?? 0) + counter,
-                    subTotal: ((item?.count ?? 0) + counter) * (item?.price ?? 0)
+                    subTotal: ((item?.count ?? 0) + counter) * (item?.price ?? 0),
+                    vat: (item?.price ?? 0) * 0.2
                 };
             } else {
                 return item;
@@ -57,7 +58,7 @@ const Product = ({ subtitle, product }: IProduct) => {
                     <div className="container-product__price">$ {product?.price}</div>
                     <div className="container-product__add-cart">
                         <div className="container-product__add-cart__counter">
-                            <span onClick={() => setCounter((counter) => counter - 1)}>
+                            <span style={{cursor: 'pointer'}} onClick={() => setCounter((counter) => counter - 1)}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
@@ -71,7 +72,7 @@ const Product = ({ subtitle, product }: IProduct) => {
                                 </svg>
                             </span>
                             <span>{counter}</span>
-                            <span onClick={() => setCounter((counter) => counter + 1)}>
+                            <span style={{cursor: 'pointer'}} onClick={() => setCounter((counter) => counter + 1)}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
@@ -98,10 +99,10 @@ const Product = ({ subtitle, product }: IProduct) => {
             </div>
             <div className="container-product-includes">
                 <div className="container-product__features">
-                    <h2>FEATURES</h2>
-                    <span className="container-product__features__description">
+                    <span className="container-product__features__title">FEATURES</span>
+                    <div className="container-product__features__description">
                         {product?.features}
-                    </span>
+                    </div>
                 </div>
                 <div className="container-product__box">
                     <span className="container-product__box-title">IN THE BOX</span>

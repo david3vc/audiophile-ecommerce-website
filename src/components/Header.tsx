@@ -70,8 +70,8 @@ const Header = () => {
                 <div className="header-container__menu">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
+                        width="20"
+                        height="20"
                         fill="currentColor"
                         className="bi bi-list"
                         viewBox="0 0 16 16"
@@ -86,6 +86,12 @@ const Header = () => {
                     <NavLink className="header-container__logo__term" to={"/"}>
                         audiophile
                     </NavLink>
+                </div>
+                <div className="header-container__menu-options">
+                    <NavLink to={"/"}>HOME</NavLink>
+                    <NavLink to={"/headphones"}>HEADPHONES</NavLink>
+                    <NavLink to={"/speakers"}>SPEAKERS</NavLink>
+                    <NavLink to={"/earphones"}>EARPHONES</NavLink>
                 </div>
                 <div
                     className="header-container__carrito"
@@ -106,15 +112,18 @@ const Header = () => {
                     )}
                 </div>
             </div>
-
+            <div className="border-header">
+                {' '}
+                <div className="border-header-child"></div>
+            </div>
             <Modal
                 padding=""
-                titulo={``}
                 anio={``}
                 mostrarHeader={true}
                 showModal={showModal}
                 setShowModal={setShowModal}
                 imagen=""
+                isCart={true}
             >
                 {(total ?? 0) > 0 ? (
                     <div className="container-modal">
@@ -139,62 +148,68 @@ const Header = () => {
                                                 className="container-modal__list__item"
                                                 key={item?.id}
                                             >
-                                                <div className="item__photo">
-                                                    <img
-                                                        src={`/src${item?.image.mobile}`}
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="item__overview">
-                                                    <div className="item__overview__description">
-                                                        {nombre?.[0] === "XX99"
-                                                            ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
-                                                            : nombre?.[0]}
+                                                <div className="container-modal__list__item-description">
+                                                    <div className="item__photo">
+                                                        <img
+                                                            src={`/src${item?.image.mobile}`}
+                                                            alt=""
+                                                        />
                                                     </div>
-                                                    <div className="item__overview__price">
-                                                        $ {item?.price}
+                                                    <div className="item__overview">
+                                                        <div className="item__overview__description">
+                                                            {nombre?.[0] === "XX99"
+                                                                ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
+                                                                : nombre?.[0]}
+                                                        </div>
+                                                        <div className="item__overview__price">
+                                                            $ {item?.price}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="item__amount">
-                                                    <span
-                                                        onClick={() =>
-                                                            handleDecreaseClick(
-                                                                item?.id ?? 0
-                                                            )
-                                                        }
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="16"
-                                                            height="16"
-                                                            fill="currentColor"
-                                                            className="bi bi-dash"
-                                                            viewBox="0 0 16 16"
-                                                            color="gray"
+                                                <div className="container-modal__list__item-cantidad">
+                                                    <div className="item__amount">
+                                                        <span
+                                                            style={{cursor: 'pointer'}}
+                                                            onClick={() =>
+                                                                handleDecreaseClick(
+                                                                    item?.id ?? 0
+                                                                )
+                                                            }
                                                         >
-                                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                                        </svg>
-                                                    </span>
-                                                    <span>{item?.count}</span>
-                                                    <span
-                                                        onClick={() =>
-                                                            handleIncreaseClick(
-                                                                item?.id ?? 0
-                                                            )
-                                                        }
-                                                    >
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="16"
-                                                            height="16"
-                                                            fill="currentColor"
-                                                            className="bi bi-plus"
-                                                            viewBox="0 0 16 16"
-                                                            color="gray"
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                className="bi bi-dash"
+                                                                viewBox="0 0 16 16"
+                                                                color="gray"
+                                                            >
+                                                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                                            </svg>
+                                                        </span>
+                                                        <span>{item?.count}</span>
+                                                        <span
+                                                            style={{cursor: 'pointer'}}
+                                                            onClick={() =>
+                                                                handleIncreaseClick(
+                                                                    item?.id ?? 0
+                                                                )
+                                                            }
                                                         >
-                                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                                                        </svg>
-                                                    </span>
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                className="bi bi-plus"
+                                                                viewBox="0 0 16 16"
+                                                                color="gray"
+                                                            >
+                                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                                            </svg>
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         )

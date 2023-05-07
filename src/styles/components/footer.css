@@ -19,16 +19,22 @@
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
+    font-size: 13px;
 }
 
 .container-footer__content{
     width: 80%;
     text-align: center;
+    color: gray;
 }
 
 .container-footer__icons{
     display: flex;
     column-gap: 10px;
+}
+
+.container-footer__copyright{
+    color: gray;
 }
 
 .container-footer__copyright-icons{
@@ -62,5 +68,11 @@
 
     .container-footer__icons{
         column-gap: 15px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container-footer{
+        padding: 55px 160px;
     }
 }

@@ -9,11 +9,13 @@ interface props {
     imagen: string;
     padding: string;
     anio: string;
+    isCart: boolean;
 }
 
 interface IContenedor {
     imagen: string;
     padding: string;
+    isCart: boolean;
 }
 
 const modal = ({
@@ -23,13 +25,14 @@ const modal = ({
     anio,
     mostrarHeader,
     imagen,
-    padding
+    padding,
+    isCart
 }: props) => {
     return (
         <>
             {showModal && (
                 <Overlay>
-                    <ContenedorModal imagen={imagen} padding={padding} >
+                    <ContenedorModal imagen={imagen} padding={padding} isCart={isCart} >
                         {mostrarHeader && (
                             <EncabezadoModal>
                                 <h3> <span style={{color: 'rgb(190, 190, 190)'}}>{anio}</span></h3>
@@ -88,8 +91,13 @@ const ContenedorModal = styled.div<IContenedor>`
 
     @media screen and (min-width: 576px) {
         width: 50%;
-        position: absolute;
+        position: ${props => props.isCart ? 'absolute' : 'relative'};
         right: 30px;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: ${props => props.isCart ? '25%' : '35%'};
+        right: ${props => props.isCart ? '170px' : '0px'};
     }
 `;
 

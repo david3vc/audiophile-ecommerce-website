@@ -3,10 +3,19 @@ import { useProductsList } from "../context/ProductsListContext";
 import Button from "./Button";
 import Modal from "./modal/modal";
 import icon from "../assets/checkout/icon-order-confirmation.svg";
+import data from "../data/data.json";
 
 const Checkout = () => {
-    const { list } = useProductsList();
+    const { list, total, setTotal, setList } = useProductsList();
     const [showModal, setShowModal] = useState(false);
+
+    let vat = 0;
+
+    for (let i = 0; i < (list?.length ?? 0); i++) {
+        if ((list?.[i]?.count ?? 0) > 0) {
+            vat += (list?.[i]?.subTotal ?? 0) * 0.2;
+        }
+    }
 
     return (
         <>
@@ -59,8 +68,8 @@ const Checkout = () => {
                                 SHIPPING INFO
                             </div>
                             <div className="checkout__shipping-info__form">
-                                <div className="shipping-info__form__input">
-                                    <label htmlFor="">Name</label>
+                                <div className="your-address">
+                                    <label htmlFor="">Your Address</label>
                                     <input
                                         type="text"
                                         placeholder=""
@@ -68,7 +77,7 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div className="shipping-info__form__input">
-                                    <label htmlFor="">Email Address</label>
+                                    <label htmlFor="">ZIP Code</label>
                                     <input
                                         type="text"
                                         placeholder=""
@@ -76,7 +85,15 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div className="shipping-info__form__input">
-                                    <label htmlFor="">Phone Number</label>
+                                    <label htmlFor="">City</label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="inputText"
+                                    />
+                                </div>
+                                <div className="shipping-info__form__input">
+                                    <label htmlFor="">Country</label>
                                     <input
                                         type="text"
                                         placeholder=""
@@ -123,24 +140,29 @@ const Checkout = () => {
                                                 className="sub-container__summary__cart-list__item"
                                                 key={item?.id}
                                             >
-                                                <div className="cart-list__item__photo">
-                                                    <img
-                                                        src={`/src${item?.image.mobile}`}
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="cart-list__item__overview">
-                                                    <div className="cart-list__item__overview__description">
-                                                        {nombre?.[0] === "XX99"
-                                                            ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
-                                                            : nombre?.[0]}
+                                                <div className="sub-container__summary__cart-list__item-description">
+                                                    <div className="cart-list__item__photo">
+                                                        <img
+                                                            src={`/src${item?.image.mobile}`}
+                                                            alt=""
+                                                        />
                                                     </div>
-                                                    <div className="cart-list__item__overview__price">
-                                                        $ {item?.price}
+                                                    <div className="cart-list__item__overview">
+                                                        <div className="cart-list__item__overview__description">
+                                                            {nombre?.[0] ===
+                                                            "XX99"
+                                                                ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
+                                                                : nombre?.[0]}
+                                                        </div>
+                                                        <div className="cart-list__item__overview__price">
+                                                            $ {item?.price}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="cart-list__item__amount">
-                                                    x{item?.count}
+                                                <div className="sub-container__summary__cart-list__item-cantidad">
+                                                    <div className="cart-list__item__amount">
+                                                        x{item?.count}
+                                                    </div>
                                                 </div>
                                             </div>
                                         )
@@ -149,20 +171,36 @@ const Checkout = () => {
                         </div>
                         <div className="sub-container__summary__detail">
                             <div className="sub-container__summary__detail__total">
-                                <span>TOTAL</span>
-                                <span>$ 5396</span>
+                                <span className="sumary__detail__term">
+                                    TOTAL
+                                </span>
+                                <span className="sumary__detail__subtotal">
+                                    $ {total}
+                                </span>
                             </div>
                             <div className="sub-container__summary__detail__shipping">
-                                <span>SHIPPING</span>
-                                <span>$ 50</span>
+                                <span className="sumary__detail__term">
+                                    SHIPPING
+                                </span>
+                                <span className="sumary__detail__subtotal">
+                                    $ 50
+                                </span>
                             </div>
                             <div className="sub-container__summary__detail__vat">
-                                <span>VAT (INCLUDED)</span>
-                                <span>$ 1079</span>
+                                <span className="sumary__detail__term">
+                                    VAT (INCLUDED)
+                                </span>
+                                <span className="sumary__detail__subtotal">
+                                    $ {vat.toFixed(0)}
+                                </span>
                             </div>
                             <div className="sub-container__summary__detail__grand-total">
-                                <span>GRAND TOTAL</span>
-                                <span>$ 5446</span>
+                                <span className="sumary__detail__term">
+                                    GRAND TOTAL
+                                </span>
+                                <span className="sumary__detail__grandtotal">
+                                    $ {(total ?? 0) + 50}
+                                </span>
                             </div>
                         </div>
                         <div className="sub-container__summary__button">
@@ -181,12 +219,12 @@ const Checkout = () => {
 
             <Modal
                 padding=""
-                titulo={``}
                 anio={``}
                 mostrarHeader={true}
                 showModal={showModal}
                 setShowModal={setShowModal}
                 imagen=""
+                isCart={false}
             >
                 <div className="container-modal-order">
                     <div className="container-modal-order__icon">
@@ -209,24 +247,29 @@ const Checkout = () => {
                                                 className="container-modal-order__detail__list__item"
                                                 key={item?.id}
                                             >
-                                                <div className="detail__list__item__photo">
-                                                    <img
-                                                        src={`/src${item?.image.mobile}`}
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="detail__list__item__overview">
-                                                    <div className="detail__list__item__overview__description">
-                                                        {nombre?.[0] === "XX99"
-                                                            ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
-                                                            : nombre?.[0]}
+                                                <div className="container-modal-order__detail__list__item-description">
+                                                    <div className="detail__list__item__photo">
+                                                        <img
+                                                            src={`/src${item?.image.mobile}`}
+                                                            alt=""
+                                                        />
                                                     </div>
-                                                    <div className="detail__list__item__overview__price">
-                                                        $ {item?.price}
+                                                    <div className="detail__list__item__overview">
+                                                        <div className="detail__list__item__overview__description">
+                                                            {nombre?.[0] ===
+                                                            "XX99"
+                                                                ? `${nombre?.[0]} ${nombre?.[1]} ${nombre?.[2]}`
+                                                                : nombre?.[0]}
+                                                        </div>
+                                                        <div className="detail__list__item__overview__price">
+                                                            $ {item?.price}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="detail__list__item__amount">
-                                                    x{item?.count}
+                                                <div className="container-modal-order__detail__list__item-cantidad">
+                                                    <div className="detail__list__item__amount">
+                                                        x{item?.count}
+                                                    </div>
                                                 </div>
                                             </div>
                                         )
@@ -234,8 +277,12 @@ const Checkout = () => {
                                 })}
                         </div>
                         <div className="container-modal-order__detail__total">
-                            <span>GRAND TOTAL</span>
-                            <span>$ 5446</span>
+                            <span className="container-modal-order__detail__total__term">
+                                GRAND TOTAL
+                            </span>
+                            <span className="container-modal-order__detail__total__money">
+                                $ 5446
+                            </span>
                         </div>
                     </div>
                     <div className="container-modal-order__button">
@@ -245,6 +292,10 @@ const Checkout = () => {
                             colorHover="colorHoverNaranja"
                             nombre="BACK TO HOME"
                             to="/"
+                            onClick={() => {
+                                setTotal?.(0);
+                                setList?.(data);
+                            }}
                         />
                     </div>
                 </div>

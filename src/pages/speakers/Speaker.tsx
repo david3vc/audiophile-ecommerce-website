@@ -9,7 +9,7 @@ const Speaker = () => {
         <div className="container-speaker">
             <ViewName name="SPEAKERS" />
             {data.map(
-                (item) =>
+                (item, i) =>
                     item.category === "speakers" && (
                         <>
                             <CardProductDetail
@@ -19,6 +19,7 @@ const Speaker = () => {
                                 img={item.image.mobile}
                                 to={`/${item.category}/${item.id}`}
                                 key={item.id}
+                                reverse={i %2 !== 0 ? true : false}
                             />
                             <br />
                             <br />

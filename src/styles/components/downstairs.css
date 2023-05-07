@@ -4,6 +4,7 @@
     row-gap: 20px;
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .container-downstairs__photo{
@@ -31,5 +32,30 @@
     .container-downstairs{
         margin-top: 50px;
         margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container-downstairs{
+        flex-direction: row-reverse;
+        width: 80%;
+        align-items: center;
+        column-gap: 100px;
+    }
+
+    .container-downstairs-imagen{
+        width: 50%;
+    }
+
+    .container-downstairs__description{
+        width: 50%;
+    }
+
+    .container-downstairs__subtitle{
+        font-size: 40px;
+    }
+
+    .container-downstairs__content{
+        margin-top: 40px;
     }
 }

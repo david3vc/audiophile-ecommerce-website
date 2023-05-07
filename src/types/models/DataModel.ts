@@ -19,4 +19,5 @@ export default interface DataModel {
     others: OthersModel[];
     count?: number;
     subTotal?: number;
+    vat?: number;
 }

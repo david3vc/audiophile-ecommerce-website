@@ -15,3 +15,20 @@
 .container-card-product2 .container-card-product2__name, .container-card-product2 .container-button{
     margin-left: 30px;
 }
+
+.container-card-product2__name{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+    .container-card-product2 .container-card-product2__name, .container-card-product2 .container-button{
+        margin-left: 60px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container-card-product2 .container-card-product2__name, .container-card-product2 .container-button{
+        margin-left: 90px;
+    }
+}

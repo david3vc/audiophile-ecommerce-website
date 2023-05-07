@@ -26,3 +26,9 @@
         width: 100%;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .container-card-product__photo{
+        width: 50%;
+    }
+}

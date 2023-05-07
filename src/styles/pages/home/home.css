@@ -17,6 +17,20 @@
     text-align: center;
 }
 
+.container-hero__category{
+    color: gray;
+}
+
+.container-hero__producto-overview{
+    color: rgb(188, 188, 188);
+}
+
+.container-hero__product-name{
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+}
+
 @media screen and (min-width: 576px) {
     .container-hero {
         background-image: url("../../../assets/home/tablet/image-header.jpg");
@@ -30,5 +44,19 @@
 @media screen and (min-width: 992px) {
     .container-hero {
         background-image: url("../../../assets/home/desktop/image-hero.jpg");
+        align-items: flex-start;
+        padding-left: 150px;
+        height: 600px;
+    }
+
+    .container-hero__producto-overview{
+        width: 25%;
+        text-align: start;
+    }
+
+    .container-hero__product-name{
+        font-size: 54px;
+        width: 50%;
+        text-align: start;
     }
 }

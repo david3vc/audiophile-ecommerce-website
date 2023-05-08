@@ -8,8 +8,9 @@ const HeadPhone = () => {
     return (
         <div className="container-headphone">
             <ViewName name="HEADPHONES" />
-            {data.map(
-                (item, i) =>
+            {data.map((item, i) => {
+                const imagen = (`..${item.image.mobile}`);
+                return (
                     item.category === "headphones" && (
                         <>
                             <CardProductDetail
@@ -19,7 +20,7 @@ const HeadPhone = () => {
                                 img={item.image.mobile}
                                 to={`/${item.category}/${item.id}`}
                                 key={item.id}
-                                reverse={i %2 === 0 ? true : false}
+                                reverse={i % 2 === 0 ? true : false}
                             />
                             <br />
                             <br />
@@ -27,7 +28,8 @@ const HeadPhone = () => {
                             <br />
                         </>
                     )
-            )}
+                );
+            })}
             <Categories />
             <Downstairs />
         </div>

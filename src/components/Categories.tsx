@@ -4,6 +4,7 @@ import speakers from '../assets/product-zx9-speaker/mobile/image-category-page-p
 import earphones from '../assets/product-yx1-earphones/mobile/image-category-page-preview.jpg';
 
 const Categories = () => {
+    console.log(headphones)
     return (
         <div className="container-categories">
             <CardProduct name="HEADPHONES" url_img={headphones} to="/headphones" />

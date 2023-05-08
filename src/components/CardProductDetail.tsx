@@ -22,7 +22,7 @@ const CardProductDetail = ({
         <div className={`container-card-product-detail ${classReverse}`}>
             <div className="container-card-product-detail-photo">
                 <div className="container-card-product-detail__img">
-                    <img src={`/src${img}`} alt="" />
+                    <img src={img} alt="" />
                 </div>
             </div>
             <div className="container-card-product-detail-detail">

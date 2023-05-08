@@ -14,12 +14,12 @@ const SuggestedProduct = ({ other }: ISuggestedProduct) => {
         <div className="container-suggested-product">
             <div className="container-suggested-product__photo">
                 {matchesDesktop ? (
-                    <img src={`/src${other.image.desktop}`} alt="" />
+                    <img src={other.image.desktop} alt="" />
                 ) : (
                     <SuggestedProductPhoto
                         matches={matches}
-                        mobile={`/src${other.image.mobile}`}
-                        tablet={`/src${other.image.tablet}`}
+                        mobile={other.image.mobile}
+                        tablet={other.image.tablet}
                     />
                 )}
             </div>

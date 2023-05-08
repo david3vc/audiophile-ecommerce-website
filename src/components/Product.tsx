@@ -46,7 +46,7 @@ const Product = ({ subtitle, product }: IProduct) => {
             <div className="container-product-detalle">
                 <div className="container-product-detalle__imagen">
                     <div className="container-product__img">
-                        <img src={`/src${product?.image.mobile}`} alt="" />
+                        <img src={product?.image.mobile} alt="" />
                     </div>
                 </div>
                 <div className="container-product-detalle__subdetalle">
@@ -122,11 +122,11 @@ const Product = ({ subtitle, product }: IProduct) => {
             </div>
             <div className="container-product__gallery">
                 <div className="container-product__gallery__part1">
-                    <img src={`/src${product?.gallery.first.mobile}`} alt="" />
-                    <img src={`/src${product?.gallery.second.mobile}`} alt="" />
+                    <img src={product?.gallery.first.mobile} alt="" />
+                    <img src={product?.gallery.second.mobile} alt="" />
                 </div>
                 <div className="container-product__gallery__part2">
-                    <img src={`/src${product?.gallery.third.mobile}`} alt="" /> 
+                    <img src={product?.gallery.third.mobile} alt="" /> 
                 </div>
             </div>
         </div>

@@ -9,7 +9,6 @@ const HeadPhone = () => {
         <div className="container-headphone">
             <ViewName name="HEADPHONES" />
             {data.map((item, i) => {
-                // const imagen = (`..${item.image.mobile}`);
                 return (
                     item.category === "headphones" && (
                         <>

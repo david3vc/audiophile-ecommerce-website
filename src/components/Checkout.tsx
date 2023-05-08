@@ -143,7 +143,7 @@ const Checkout = () => {
                                                 <div className="sub-container__summary__cart-list__item-description">
                                                     <div className="cart-list__item__photo">
                                                         <img
-                                                            src={`/src${item?.image.mobile}`}
+                                                            src={item?.image.mobile}
                                                             alt=""
                                                         />
                                                     </div>
@@ -250,7 +250,7 @@ const Checkout = () => {
                                                 <div className="container-modal-order__detail__list__item-description">
                                                     <div className="detail__list__item__photo">
                                                         <img
-                                                            src={`/src${item?.image.mobile}`}
+                                                            src={item?.image.mobile}
                                                             alt=""
                                                         />
                                                     </div>

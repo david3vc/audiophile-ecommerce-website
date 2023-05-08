@@ -151,7 +151,7 @@ const Header = () => {
                                                 <div className="container-modal__list__item-description">
                                                     <div className="item__photo">
                                                         <img
-                                                            src={`/src${item?.image.mobile}`}
+                                                            src={item?.image.mobile}
                                                             alt=""
                                                         />
                                                     </div>

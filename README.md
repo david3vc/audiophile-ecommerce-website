@@ -1,4 +1,4 @@
-# Frontend Mentor - Entertainment web app solution
+# Frontend Mentor - Audiophile e-commerce website solution
 
 This is a solution to the [Audiophile e-commerce website](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
 
